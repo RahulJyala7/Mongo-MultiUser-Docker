@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  mongodb_auth_new-x:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    volumes:
+        - "./script/script.js:/docker-entrypoint-initdb.d/script.js" 
+    ports:
+        - 27017:27017
